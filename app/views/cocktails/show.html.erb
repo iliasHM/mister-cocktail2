@@ -1,0 +1,33 @@
+
+  <h1 class="text-center"><%= @cocktail.name %></h1>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <%= image_tag @cocktail.picture.url(:medium), class: "preview-img" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+    <h2 class="text-center">Ingredients</h2>
+    <ul class="list-unstyled">
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.description %> <%= dose.ingredient.name %>
+        <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete do %>
+          &times;
+        <% end %>
+        </li>
+      <% end %>
+    </ul>
+
+    <p>Add ingredients</p>
+      <%= render 'doses/form',
+          cocktail: @cocktail,
+          dose: @cocktail.doses.new %>
+
+    <%= link_to "Back to list", root_path, class: "btn btn-info" %>
+
+
+  </div>
+</div>
+

@@ -1,0 +1,20 @@
+<div class="col-md-8 col-md-offset-2">
+  <h2 class="text-center">Ajoutez un cocktail</h2>
+
+    <%= form_for(@cocktail, html: { multipart: true }) do |f| %>
+    <% if f.object.errors.present? %>
+      <ul>
+        <% f.object.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.file_field :picture, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Créer cocktail", class: "btn btn-success" %>
+  <% end %>
+</div>

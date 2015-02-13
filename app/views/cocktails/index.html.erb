@@ -1,0 +1,27 @@
+<h1 class="text-center">Cocktails List</h1>
+
+<!-- <div class="row navbar-wagon">
+  <div class="col-sm-6 col-sm-offset-3" id="banner"></div>
+</div> -->
+
+
+<div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="card text-center">
+        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+        <i class="fa fa-glass"></i>
+      </div>
+    </div>
+  <% end %>
+  <div class="col-sm-6 col-md-4">
+    <div class="card text-center">
+      <h2>
+        <%= link_to new_cocktail_path do %>
+          <i class="fa fa-plus"></i>
+        <% end %>
+      </h2>
+      <p>Ajouter un cocktail</p>
+    </div>
+  </div>
+</div>
