@@ -156,3 +156,14 @@ $navbar-profile-border-width: 2px;
     }
   }
 }
+
+
+// To fix the navbar / body overlay
+body {
+  padding-top: 60px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
