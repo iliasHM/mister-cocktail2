@@ -11,8 +11,15 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card text-center">
           <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-          <%= image_tag cocktail.picture.url(:thumb) %>
-          <i class="fa fa-glass"></i>
+
+          <% if cocktail.picture_file_name %>
+            <%= image_tag cocktail.picture.url(:thumb) %>
+          <% else %>
+            <i class="fa fa-glass"></i>
+          <% end %>
+
+
+
         </div>
       </div>
     <% end %>
