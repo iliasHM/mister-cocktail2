@@ -15,7 +15,7 @@
           <% if cocktail.picture_file_name %>
             <%= image_tag cocktail.picture.url(:thumb), class: 'img-circle' %>
           <% else %>
-            <i class="fa fa-glass padding-top"></i>
+            <i class="fa fa-glass top-buffer"></i>
           <% end %>
 
 
@@ -27,7 +27,7 @@
       <div class="card text-center">
         <h2>
           <%= link_to new_cocktail_path do %>
-            <i class="fa fa-plus"></i>
+            <i class="fa fa-plus padded"></i>
           <% end %>
         </h2>
         <p>Ajouter un cocktail</p>

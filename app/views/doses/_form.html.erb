@@ -1,13 +1,11 @@
-<%= form_for [ cocktail, dose ] do |f| %>
-  <div class="form-inline">
-  <%= f.text_field :description, class: "form-control" %>
-  <%= f.select :ingredient_id, options_from_collection_for_select(Ingredient.all, 'id', 'name'), class: "form-control" %>
+<%= simple_form_for([ cocktail, dose ], :html => { :class => 'form-horizontal' }) do |f| %>
+  <div class="form-inputs padded">
+    <%= f.input :description %>
+
+    <%= f.select :ingredient_id, options_from_collection_for_select(Ingredient.all, 'id', 'name') %>
+
+    <%= f.submit "Add to receipe", class: "btn btn-success" %>
   </div>
-
-
-  <div>
-  <%= f.submit "Add to receipe", class: "btn btn-success" %>
-  </div>
-
 
 <% end %>
+
