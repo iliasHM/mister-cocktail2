@@ -3,11 +3,19 @@
   margin: 15px;
   padding: 20px;
   border-radius: 10px;
-  min-height: 150px;
+  min-height: 210px;
 
 }
 
 .preview-img {
   border-radius: 50%;
+}
+
+body {
+  background-image: url("images/cocktail.jpg");
+}
+
+.padding-top {
+  padding-top: 30px;
 }
 

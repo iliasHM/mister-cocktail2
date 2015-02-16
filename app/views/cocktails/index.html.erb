@@ -13,9 +13,9 @@
           <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
 
           <% if cocktail.picture_file_name %>
-            <%= image_tag cocktail.picture.url(:thumb) %>
+            <%= image_tag cocktail.picture.url(:thumb), class: 'img-circle' %>
           <% else %>
-            <i class="fa fa-glass"></i>
+            <i class="fa fa-glass padding-top"></i>
           <% end %>
 
 
